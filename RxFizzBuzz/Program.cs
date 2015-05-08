@@ -12,10 +12,11 @@ namespace RxFizzBuzz
         {
             Observable.Interval(TimeSpan.FromSeconds(1))
                 .Skip(1) //skips zero
-                .Subscribe(i => Console.WriteLine(i % 3 == 0 && i % 5 == 0 ? "FizzBuzz"
-                                                              : i % 3 == 0 ? "Fizz"
-                                                              : i % 5 == 0 ? "Buzz"
-                                                              : i.ToString()));
+                .Subscribe(t => 
+                    Console.WriteLine(t % 3 == 0 && t % 5 == 0 ? "FizzBuzz"
+                                                  : t % 3 == 0 ? "Fizz"
+                                                  : t % 5 == 0 ? "Buzz"
+                                                  : t.ToString()));
 
             Console.WriteLine("Press any key to stop...");
             Console.ReadKey();
